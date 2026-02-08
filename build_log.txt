@@ -1,0 +1,222 @@
+
+> uistrike@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 6 errors:
+./node_modules/@standard-community/standard-json/dist/effect-QlVUlMFu.js:2:1
+Module not found: Can't resolve 'quansync'
+[0m [90m 1 |[39m [36mimport[39m { [33mM[39m [36mas[39m [33mMissingDependencyError[39m } [36mfrom[39m [32m'./index-CLddUTqr.js'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36masync[39m [36mfunction[39m getToJsonSchemaFn() {
+ [90m 5 |[39m   [36mtry[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/effect-QlVUlMFu.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/effect-QlVUlMFu.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js:1:1
+Module not found: Can't resolve 'quansync'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { quansync } [36mfrom[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [36mconst[39m validationMapper [33m=[39m [90m/* @__PURE__ */[39m [36mnew[39m [33mMap[39m()[33m;[39m
+ [90m 4 |[39m [36mclass[39m [33mUnsupportedVendorError[39m [36mextends[39m [33mError[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/@standard-community/standard-json/dist/index.js:2:1
+Module not found: Can't resolve 'quansync'
+[0m [90m 1 |[39m [36mexport[39m { l [36mas[39m loadVendor[33m,[39m t [36mas[39m toJsonSchema } [36mfrom[39m [32m'./index-CLddUTqr.js'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/@standard-community/standard-json/dist/sury-CWZTCd75.js:2:1
+Module not found: Can't resolve 'quansync'
+[0m [90m 1 |[39m [36mimport[39m { [33mM[39m [36mas[39m [33mMissingDependencyError[39m } [36mfrom[39m [32m'./index-CLddUTqr.js'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36masync[39m [36mfunction[39m getToJsonSchemaFn() {
+ [90m 5 |[39m   [36mtry[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/sury-CWZTCd75.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/sury-CWZTCd75.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/@standard-community/standard-json/dist/valibot--1zFm7rT.js:2:1
+Module not found: Can't resolve 'quansync'
+[0m [90m 1 |[39m [36mimport[39m { [33mM[39m [36mas[39m [33mMissingDependencyError[39m } [36mfrom[39m [32m'./index-CLddUTqr.js'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36masync[39m [36mfunction[39m getToJsonSchemaFn() {
+ [90m 5 |[39m   [36mtry[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/valibot--1zFm7rT.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/valibot--1zFm7rT.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/@standard-community/standard-json/dist/zod-Bwrt9trS.js:2:1
+Module not found: Can't resolve 'quansync'
+[0m [90m 1 |[39m [36mimport[39m { [33mM[39m [36mas[39m [33mMissingDependencyError[39m } [36mfrom[39m [32m'./index-CLddUTqr.js'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m'quansync'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mconst[39m zodv4Error [33m=[39m [36mnew[39m [33mMissingDependencyError[39m([32m"zod v4"[39m)[33m;[39m
+ [90m 5 |[39m [36masync[39m [36mfunction[39m getToJsonSchemaFn() {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@standard-community/standard-json/dist/zod-Bwrt9trS.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component Browser]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component Browser]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component Browser]
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@standard-community/standard-json/dist/zod-Bwrt9trS.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index-CLddUTqr.js [Client Component SSR]
+    ./node_modules/@standard-community/standard-json/dist/index.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/schema/schema.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/providers/tambo-interactable-provider.js [Client Component SSR]
+    ./node_modules/@tambo-ai/react/esm/v1/providers/tambo-v1-provider.js [Client Component SSR]
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at ./node_modules/ (standard-community/standard-json/dist/effect-QlVUlMFu.js:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at ./node_modules/ (standard-community/standard-json/dist/index-CLddUTqr.js:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at ./node_modules/ (standard-community/standard-json/dist/index.js:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at ./node_modules/ (standard-community/standard-json/dist/sury-CWZTCd75.js:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at ./node_modules/ (standard-community/standard-json/dist/valibot--1zFm7rT.js:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at ./node_modules/ (standard-community/standard-json/dist/zod-Bwrt9trS.js:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

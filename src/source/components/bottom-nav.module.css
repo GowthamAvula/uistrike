@@ -1,0 +1,104 @@
+:root {
+    --nav-bg: #0f1220;
+    --nav-border: rgba(255, 255, 255, .08);
+    --text: rgba(255, 255, 255, .78);
+    --muted: rgba(255, 255, 255, .55);
+    --active: #ffffff;
+    --accent: #6c5ce7;
+    /* change to your brand color */
+    --accent-2: #00d2ff;
+    /* optional gradient partner */
+}
+
+.bottomNav {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+    width: min(520px, calc(100% - 24px));
+    height: 72px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--nav-bg) 92%, black 8%);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .45), 0 2px 0 rgba(255, 255, 255, .04) inset;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+
+    /* Hide on desktop by default */
+}
+
+@media (max-width: 768px) {
+    .bottomNav {
+        display: grid;
+    }
+}
+
+.navItem {
+    height: 52px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 14px;
+    transition: 160ms ease;
+}
+
+.navItem .icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.navItem .label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+
+.navItem:hover {
+    background: rgba(255, 255, 255, .06);
+    color: var(--text);
+}
+
+.isActive {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 85%, white 15%), color-mix(in srgb, var(--accent-2) 85%, white 15%));
+    color: #0b0d14;
+    box-shadow: 0 10px 22px rgba(108, 92, 231, .25);
+}
+
+.fab {
+    height: 58px;
+    width: 58px;
+    justify-self: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #0b0d14;
+    box-shadow: 0 16px 34px rgba(108, 92, 231, .35);
+}
+
+.fab .label {
+    display: none;
+}
+
+.fab .icon {
+    font-size: 22px;
+}
+
+@media (max-width: 420px) {
+    .navItem .label {
+        display: none;
+    }
+
+    .bottomNav {
+        grid-template-columns: 1fr 1fr 76px 1fr 1fr;
+    }
+}

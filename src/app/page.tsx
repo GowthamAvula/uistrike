@@ -1,65 +1,141 @@
-import Image from "next/image";
+"use client";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Group, Text } from "@mantine/core";
+import { User } from "lucide-react";
+import { BookingContent, VideoHero, TravelFooter } from "@/source/components/BookingPage";
+import { BottomNav, TabType } from "@/source/components/BottomNav";
+import { DashboardPage } from "@/source/components/DashboardPage";
+import { Marketplace } from "@/source/components/marketplace";
+import { MessageThreadCollapsible } from "../source/components/message-thread-collapsible";
+
+import { AuroraBackground } from "@/source/components/AuroraBackground";
+import { LandingPage } from "@/source/components/LandingPage";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<TabType>("flights");
+  const [showLanding, setShowLanding] = useState(true);
+  const [userName, setUserName] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedName = localStorage.getItem("displayName");
+    if (storedName) {
+      setUserName(storedName);
+    }
+  }, []);
+
+  const handleNameSet = (name: string) => {
+    localStorage.setItem("displayName", name);
+    setUserName(name);
+  };
+
+  if (showLanding) {
+    return (
+      <LandingPage onEnter={(target) => {
+        if (target) setActiveTab(target as TabType);
+        setShowLanding(false);
+      }} />
+    );
+  }
+
+  const renderBackground = () => {
+    if (activeTab === "flights") {
+      return <VideoHero />;
+    }
+    return <AuroraBackground />;
+  };
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "dashboard":
+        return <DashboardPage key="dashboard" />;
+      case "flights":
+        return <BookingContent key="flights" userName={userName} onNameSet={handleNameSet} />;
+      case "market":
+        return <Marketplace key="market" />;
+      default:
+        return <BookingContent key="flights" userName={userName} onNameSet={handleNameSet} />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen relative text-white font-sans overflow-x-hidden selection:bg-blue-500/30">
+      {/* Context-Aware Background Shell */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab === "flights" ? "flight-video" : "aurora-bg"}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            {renderBackground()}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {userName && activeTab === "flights" && (
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-[60] opacity-30 select-none">
+            <Group gap="xs">
+              <User size={12} className="text-cyan-400" />
+              <Text size="[10px]" fw={900} className="tracking-[0.4em] uppercase text-white pointer-events-none">
+                COMMS ACTIVE: {userName}
+              </Text>
+            </Group>
+          </div>
+        )}
+
+        <main className="flex-1 pb-32">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 1.02, filter: "blur(10px)" }}
+              transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            >
+              {renderContent()}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+
+        <TravelFooter />
+        <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
+      </div>
+
+      <MessageThreadCollapsible />
+
+      <style jsx global>{`
+                /* Ensure components fit into the shared shell */
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                /* Override backgrounds if necessary */
+                .marketplace, .command-center {
+                   background: transparent !important;
+                }
+                
+                /* Custom scrollbar for premium feel */
+                ::-webkit-scrollbar {
+                    width: 8px;
+                }
+                ::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.02);
+                }
+                ::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 4px;
+                }
+                ::-webkit-scrollbar-thumb:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            `}</style>
     </div>
   );
 }
